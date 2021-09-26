@@ -13,18 +13,11 @@ jobs:
       - name: terraform validate
         uses: dflook/terraform-validate@v1
         env:
-          OBJ_REGION: ${{ secrets.OBJ_REGION }}
-          OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
-          OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
-          OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
-          LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
-        with:
-          variables: |
-            OBJ_REGION = "${OBJ_REGION}"
-            OBJ_ACCESS_KEY = "${OBJ_ACCESS_KEY}"
-            OBJ_SECRET_KEY = "${OBJ_SECRET_KEY}"
-            OBJ_BUCKET_URL = "${OBJ_BUCKET_URL}"
-            LINODE_TOKEN = "${LINODE_TOKEN}"
+          TF_VAR_OBJ_REGION: ${{ secrets.OBJ_REGION }}
+          TF_VAR_OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
+          TF_VAR_OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
+          TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
   fmt-check:
     runs-on: ubuntu-latest
     name: Check formatting of terraform files
@@ -35,18 +28,11 @@ jobs:
       - name: terraform fmt
         uses: dflook/terraform-fmt-check@v1
         env:
-          OBJ_REGION: ${{ secrets.OBJ_REGION }}
-          OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
-          OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
-          OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
-          LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
-        with:
-          variables: |
-            OBJ_REGION = "${OBJ_REGION}"
-            OBJ_ACCESS_KEY = "${OBJ_ACCESS_KEY}"
-            OBJ_SECRET_KEY = "${OBJ_SECRET_KEY}"
-            OBJ_BUCKET_URL = "${OBJ_BUCKET_URL}"
-            LINODE_TOKEN = "${LINODE_TOKEN}"
+          TF_VAR_OBJ_REGION: ${{ secrets.OBJ_REGION }}
+          TF_VAR_OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
+          TF_VAR_OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
+          TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
   plan:
     runs-on: ubuntu-latest
     name: Create a plan for an example terraform configuration
@@ -59,16 +45,9 @@ jobs:
       - name: terraform plan
         uses: dflook/terraform-plan@v1
         env:
-          OBJ_REGION: ${{ secrets.OBJ_REGION }}
-          OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
-          OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
-          OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
-          LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
-        with:
-          variables: |
-            OBJ_REGION = "${OBJ_REGION}"
-            OBJ_ACCESS_KEY = "${OBJ_ACCESS_KEY}"
-            OBJ_SECRET_KEY = "${OBJ_SECRET_KEY}"
-            OBJ_BUCKET_URL = "${OBJ_BUCKET_URL}"
-            LINODE_TOKEN = "${LINODE_TOKEN}"
+          TF_VAR_OBJ_REGION: ${{ secrets.OBJ_REGION }}
+          TF_VAR_OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
+          TF_VAR_OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
+          TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
 
