@@ -3,9 +3,6 @@ data "terraform_remote_state" "cluster" {
 	config = {
 		bucket = "terraformtest"
 		key = "cluster/terraform.tfstate"
-		region = var.OBJ_REGION
-		access_key = var.OBJ_ACCESS_KEY
-		secret_key = var.OBJ_SECRET_KEY
 		endpoint = var.OBJ_BUCKET_URL
 	}
 }

@@ -13,9 +13,10 @@ jobs:
       - name: terraform validate
         uses: dflook/terraform-validate@v1
         env:
-          TF_VAR_OBJ_REGION: ${{ secrets.OBJ_REGION }}
-          TF_VAR_OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
-          TF_VAR_OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          AWS_REGION: ${{ secrets.OBJ_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.OBJ_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          AWS_S3_ENDPOINT: ${{ secrets.OBJ_ENDPOINT }}
           TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
           TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
   fmt-check:
@@ -28,9 +29,10 @@ jobs:
       - name: terraform fmt
         uses: dflook/terraform-fmt-check@v1
         env:
-          TF_VAR_OBJ_REGION: ${{ secrets.OBJ_REGION }}
-          TF_VAR_OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
-          TF_VAR_OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          AWS_REGION: ${{ secrets.OBJ_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.OBJ_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          AWS_S3_ENDPOINT: ${{ secrets.OBJ_ENDPOINT }}
           TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
           TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
   plan:
@@ -45,9 +47,10 @@ jobs:
       - name: terraform plan
         uses: dflook/terraform-plan@v1
         env:
-          TF_VAR_OBJ_REGION: ${{ secrets.OBJ_REGION }}
-          TF_VAR_OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
-          TF_VAR_OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          AWS_REGION: ${{ secrets.OBJ_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.OBJ_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          AWS_S3_ENDPOINT: ${{ secrets.OBJ_ENDPOINT }}
           TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
           TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
 
