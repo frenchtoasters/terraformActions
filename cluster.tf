@@ -3,9 +3,6 @@ terraform {
 		bucket = "terraformtest"
 		key = "cluster/terraform.tfstate"
 		region = "us-east-1"
-		access_key = var.OBJ_ACCESS_KEY
-		secret_key = var.OBJ_SECRET_KEY
-		endpoint = var.OBJ_ENDPOINT
 	}
 }
 
