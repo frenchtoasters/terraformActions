@@ -35,6 +35,8 @@ jobs:
 
       - name: terraform fmt
         uses: dflook/terraform-fmt-check@v1
+        with:
+          backend_config: AWS_REGION=${{ secrets.OBJ_REGION }}
   plan:
     runs-on: ubuntu-latest
     name: Create a plan for an example terraform configuration
