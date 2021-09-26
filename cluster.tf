@@ -3,7 +3,7 @@ data "terraform_remote_state" "cluster" {
 	config = {
 		bucket = "terraformtest"
 		key = "cluster/terraform.tfstate"
-		endpoint = var.OBJ_BUCKET_URL
+		region = "us-east-1"
 	}
 }
 
