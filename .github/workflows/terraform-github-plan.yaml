@@ -13,7 +13,12 @@ jobs:
       - name: terraform validate
         uses: dflook/terraform-validate@v1
         with:
-          path: my-terraform-config
+          variables: |
+            OBJ_REGION = "${secrets.OBJ_REGION}"
+            OBJ_ACCESS_KEY = "${secrets.OBJ_ACCESS_KEY}"
+            OBJ_SECRET_KEY = "${secrets.OBJ_SECRET_KEY}"
+            OBJ_BUCKET_URL = "${secrets.OBJ_BUCKET_URL}"
+            LINODE_TOKEN = "${secrets.LINODE_TOKEN}"
 
   fmt-check:
     runs-on: ubuntu-latest
@@ -25,7 +30,12 @@ jobs:
       - name: terraform fmt
         uses: dflook/terraform-fmt-check@v1
         with:
-          path: my-terraform-config
+          variables: |
+            OBJ_REGION = "${secrets.OBJ_REGION}"
+            OBJ_ACCESS_KEY = "${secrets.OBJ_ACCESS_KEY}"
+            OBJ_SECRET_KEY = "${secrets.OBJ_SECRET_KEY}"
+            OBJ_BUCKET_URL = "${secrets.OBJ_BUCKET_URL}"
+            LINODE_TOKEN = "${secrets.LINODE_TOKEN}"
   plan:
     runs-on: ubuntu-latest
     name: Create a plan for an example terraform configuration
@@ -38,4 +48,9 @@ jobs:
       - name: terraform plan
         uses: dflook/terraform-plan@v1
         with:
-          path: my-terraform-config
+          variables: |
+            OBJ_REGION = "${secrets.OBJ_REGION}"
+            OBJ_ACCESS_KEY = "${secrets.OBJ_ACCESS_KEY}"
+            OBJ_SECRET_KEY = "${secrets.OBJ_SECRET_KEY}"
+            OBJ_BUCKET_URL = "${secrets.OBJ_BUCKET_URL}"
+            LINODE_TOKEN = "${secrets.LINODE_TOKEN}"
