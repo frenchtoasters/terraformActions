@@ -11,17 +11,16 @@ jobs:
     name: Apply terraform plan
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AWS_REGION: ${{ secrets.OBJ_REGION }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.OBJ_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+      AWS_S3_ENDPOINT: ${{ secrets.OBJ_ENDPOINT }}
+      TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
+      TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: terraform apply
         uses: dflook/terraform-apply@v1
-        env:
-          AWS_REGION: ${{ secrets.OBJ_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.OBJ_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.OBJ_SECRET_KEY }}
-          AWS_S3_ENDPOINT: ${{ secrets.OBJ_ENDPOINT }}
-          TF_VAR_OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
-          TF_VAR_LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
 
