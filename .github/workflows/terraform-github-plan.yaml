@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run fmt-check
-        run: echo "fmt-check"
+        run: echo "fmt-check" && echo "${AWS_REGION}"
   plan:
     runs-on: ubuntu-latest
     name: Create a plan for an example terraform configuration
