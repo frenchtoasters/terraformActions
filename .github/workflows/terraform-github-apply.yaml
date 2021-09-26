@@ -17,10 +17,16 @@ jobs:
 
       - name: terraform apply
         uses: dflook/terraform-apply@v1
+        env:
+          OBJ_REGION: ${{ secrets.OBJ_REGION }}
+          OBJ_ACCESS_KEY: ${{ secrets.OBJ_ACCESS_KEY }}
+          OBJ_SECRET_KEY: ${{ secrets.OBJ_SECRET_KEY }}
+          OBJ_BUCKET_URL: ${{ secrets.OBJ_BUCKET_URL }}
+          LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
         with:
           variables: |
-            OBJ_REGION = "${secrets.OBJ_REGION}"
-            OBJ_ACCESS_KEY = "${secrets.OBJ_ACCESS_KEY}"
-            OBJ_SECRET_KEY = "${secrets.OBJ_SECRET_KEY}"
-            OBJ_BUCKET_URL = "${secrets.OBJ_BUCKET_URL}"
-            LINODE_TOKEN = "${secrets.LINODE_TOKEN}"
+            OBJ_REGION = "${OBJ_REGION}"
+            OBJ_ACCESS_KEY = "${OBJ_ACCESS_KEY}"
+            OBJ_SECRET_KEY = "${OBJ_SECRET_KEY}"
+            OBJ_BUCKET_URL = "${OBJ_BUCKET_URL}"
+            LINODE_TOKEN = "${LINODE_TOKEN}"
