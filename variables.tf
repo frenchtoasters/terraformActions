@@ -1,19 +1,19 @@
 variable "LINODE_TOKEN" {
-	default = ""
+	type = string
 }
 
 variable "OBJ_REGION" {
-	default = ""
+	type = string
 }
 
 variable "OBJ_ACCESS_KEY" {
-	default = ""
+	type = string
 }
 
 variable "OBJ_SECRET_KEY" {
-	default = ""
+	type = string
 }
 
 variable "OBJ_BUCKET_URL" {
-	default = ""
+	type = string
 }
