@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run validate
         env:
-          AWS_REGION: ${{ secrets.OBJ_REGION }}
+          AWS_REGION: ${{ secrets.terraform.OBJ_REGION }}
         run: echo "validate" && echo "${AWS_REGION}"
 
   fmt-check:
