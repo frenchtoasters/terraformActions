@@ -24,5 +24,5 @@ jobs:
       - name: terraform apply
         uses: dflook/terraform-apply@v1
         with:
-          backend_config: region=${{ secrets.OBJ_REGION }}
+          backend_config: region="${{ secrets.OBJ_REGION }}",
 
