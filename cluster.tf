@@ -3,6 +3,7 @@ terraform {
 		bucket = "terraformtest"
 		key = "cluster/terraform.tfstate"
 		region = "us-east-1"
+		endpoint = var.OBJ_BUCKET_URL
 	}
 }
 
